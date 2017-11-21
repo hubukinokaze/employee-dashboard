@@ -116,9 +116,6 @@
 						<include>target/ROOT.war</include>
 					</includes>
 					<jdkVersion>1.8</jdkVersion>
-					<processTypes>
-						<web>java $JAVA_OPTS -cp ROOT.war</web>
-					</processTypes>
 				</configuration>
 			</plugin>
 			<!--<plugin>-->
