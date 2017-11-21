@@ -1,0 +1,21 @@
+<div>
+  <form class="form-filter">
+    <mat-form-field class="filter-form-field-2">
+      <mat-icon matPrefix>account_box</mat-icon>
+      <input matInput placeholder="Name" [(ngModel)]="newData.name" (input)="checkIsFilled()" type="text" name="phone">
+    </mat-form-field>
+    <mat-form-field class="filter-form-field-2">
+      <mat-icon matPrefix>phone</mat-icon>
+      <input matInput placeholder="Phone Number" [(ngModel)]="newData.phoneNumber" (input)="checkIsFilled()" type="text" name="phone">
+    </mat-form-field>
+    <mat-form-field class="filter-form-field-2">
+      <mat-icon matPrefix>supervisor_account</mat-icon>
+      <input matInput placeholder="Supervisor" [(ngModel)]="newData.supervisor" (input)="checkIsFilled()" type="text" name="supervisor">
+    </mat-form-field>
+  </form>
+
+  <div class="button-row">
+    <button class="dialog-button" mat-raised-button color="primary" [disabled]="!isFilled" (click)="addDate()" [mat-dialog-close]="newData" tabindex="1">Done</button>
+    <button class="dialog-button" mat-raised-button mat-dialog-close tabindex="2">Close</button>
+  </div>
+</div>

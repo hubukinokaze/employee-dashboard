@@ -1,0 +1,80 @@
+<navbar-component></navbar-component>
+<header-component></header-component>
+
+<section class="home-container">
+  <div class="main-content">
+
+    <form class="form-filter">
+      <mat-form-field class="filter-form-field" matTooltip="Choose column" [matTooltipPosition]="'above'" matTooltipShowDelay="1000">
+        <mat-select [(value)]="filterName" (change)="changeFilter($event.value)">
+          <mat-option *ngFor="let f of filterValueList" [value]="f.value" >
+            {{ f.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <span class="filter-form-field">
+      </span>
+
+      <mat-form-field class="filter-form-field" matTooltip="Type to filter" [matTooltipPosition]="'above'" matTooltipShowDelay="1000">
+        <input matInput placeholder="Filter" (input)="filterList($event.target.value)" [(ngModel)]="searchFilter" type="text" name="search">
+        <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="clearFilter()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </form>
+
+    <div class="example-container mat-elevation-z8">
+      <div class="table-header">
+        <span>
+          <h2 class="project-name-2">Employee Table</h2>
+        </span>
+
+        <span class="spacer"></span>
+
+        <span class="add-employee-fab">
+          <button mat-raised-button matSuffix mat-mini-fab aria-label="Add" color="primary" (click)="addEmployeeDialog()">
+            <mat-icon>add</mat-icon>
+          </button>
+        </span>
+      </div>
+
+      <div *ngIf="isLoadingResults">
+        <mat-progress-bar mode="indeterminate" *ngIf="isLoadingResults"></mat-progress-bar>
+      </div>
+
+      <mat-table #table [dataSource]="dataSource" class="example-table" matSort matSortActive="id" matSortDirection="asc">
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef mat-sort-header class="id-column">#</mat-header-cell>
+          <mat-cell *matCellDef="let row" class="id-column">{{ row.id }}</mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{ row.name }}</mat-cell>
+        </ng-container>
+
+        <!-- Phone Number Column -->
+        <ng-container matColumnDef="phoneNumber">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Phone Number</mat-header-cell>
+          <mat-cell *matCellDef="let row" class="phone-column">{{ row.phoneNumber }}</mat-cell>
+        </ng-container>
+
+        <!-- Supervisor Column -->
+        <ng-container matColumnDef="supervisor">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Supervisor</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{ row.supervisor }}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columns; let i = index" (click)="editEmployeeDialog(row, i)"></mat-row>
+      </mat-table>
+
+      <mat-paginator #paginator [length]="resultsLength" [pageSize]="20">
+      </mat-paginator>
+    </div>
+  </div>
+</section>

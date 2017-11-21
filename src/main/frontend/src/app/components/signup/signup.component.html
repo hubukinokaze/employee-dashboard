@@ -1,0 +1,30 @@
+<section class="login-container">
+  <div class="login-content">
+    <mat-card class="card-flex">
+      <img class="card-img" src="./assets/img/angular-spring.png">
+      <span class="spacer"></span>
+      <div class="card-header">
+        CREATE AN ACCOUNT
+      </div>
+      <mat-card-content>
+        <form class="form-flex">
+          <mat-form-field class="field-flex">
+            <input matInput placeholder="Username" [(ngModel)]="username" (keyup.enter)="signup()" type="text" name="username">
+          </mat-form-field>
+          <mat-form-field class="field-flex">
+            <input matInput placeholder="Password" [(ngModel)]="password" (keyup.enter)="signup()" type="password" name="password">
+          </mat-form-field>
+          <mat-form-field class="field-flex">
+            <input matInput placeholder="Confirm Password" [(ngModel)]="passwordConfirm" (keyup.enter)="signup()" type="password" name="passwordConfirm">
+          </mat-form-field>
+        </form>
+        <div class="card-bottom">
+          <button class="card-bottom-item" mat-raised-button color="primary" (click)="signup()">SIGNUP</button>
+          <p class="card-bottom-item">Already have an account?</p>
+          <a class="card-bottom-item" (click)="goToLogin()">Go to login</a>
+        </div>
+      </mat-card-content>
+      <mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
+    </mat-card>
+  </div>
+</section>

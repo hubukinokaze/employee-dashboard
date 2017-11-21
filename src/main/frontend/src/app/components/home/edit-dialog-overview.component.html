@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>
+  <input matInput placeholder="{{ data.name }}" [(ngModel)]="newData.name" type="text" name="name">
+</h1>
+<div>
+  <mat-list>
+    <h3 mat-subheader>Information</h3>
+    <mat-list-item>
+      <mat-icon mat-list-icon>phone</mat-icon>
+      <input matInput placeholder="{{ data.phoneNumber }}" [(ngModel)]="newData.phoneNumber" type="text" name="phone">
+    </mat-list-item>
+    <mat-list-item>
+      <mat-icon mat-list-icon>supervisor_account</mat-icon>
+      <input matInput placeholder="{{ data.supervisor }}" [(ngModel)]="newData.supervisor" type="text" name="supervisor">
+    </mat-list-item>
+  </mat-list>
+  <div class="button-row">
+    <button class="dialog-button" mat-raised-button color="primary" [mat-dialog-close]="newData" tabindex="1">Done</button>
+    <button class="dialog-button" mat-raised-button color="warn" [mat-dialog-close]="data.id" tabindex="2">Delete</button>
+    <button class="dialog-button" mat-raised-button mat-dialog-close tabindex="3">Close</button>
+  </div>
+</div>
