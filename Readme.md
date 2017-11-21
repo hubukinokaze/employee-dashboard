@@ -1,67 +1,45 @@
-# Spring Boot, MySQL, JPA, Hibernate Rest API Tutorial
+[![Build Status](https://travis-ci.org/akveo/ng2-smart-table.svg?branch=master)](https://travis-ci.org/akveo/ng2-smart-table)
 
-Build Restful CRUD API for a simple Note-Taking application using Spring Boot, Mysql, JPA and Hibernate.
+# Employee Dashboard
 
-## Requirements
+Angular table component forked from [Akveo Team](https://github.com/akveo/ng2-smart-table) and modified by Jun Kawa.
+This project uses Angular 2 as the front-end and Spring Boot as back-end.
+You will be able to perform CRUD operations to update employees displayed on the table.
 
-1. Java - 1.8.x
+## Features
+- Flexible Table
+- Perform CRUD operations
 
-2. Maven - 3.x.x
+## Installation
 
-3. Mysql - 5.x.x
+### What you'll need
+- Angular 4.4.4
+- Spring Boot 1.5.4
+- MySQL
+- Java 8
+- Maven 3.5.2
 
-## Steps to Setup
+### Setting up
 
-**1. Clone the application**
-
-```bash
-git@github.com:callicoder/spring-boot-mysql-rest-api-tutorial.git
+- Clone this project
+```
+git clone https://github.com/hubukinokaze/employee-dashboard.git employee-dashboard
 ```
 
-**2. Create Mysql database**
-```bash
-create database notes_app
+- Install dependencies
+```
+mvn clean install
 ```
 
-**3. Change mysql username and password as per your installation**
+- Run your local MySQL database using something like [MAMP](https://www.mamp.info/en/).
 
-+ open `src/main/resources/application.properties`
-
-+ change `spring.datasource.username` and `spring.datasource.password` as per your mysql installation
-
-**2. Build and run the app using maven**
-
-```bash
-mvn package
-java -jar target/easy-notes-1.0.0.jar
+- Run project
 ```
-
-Alternatively, you can run the app without packaging it using -
-
-```bash
 mvn spring-boot:run
 ```
 
-The app will start running at <http://localhost:8080>.
+- Access page at [http://localhost:8080](http://localhost:8080).
 
-## Explore Rest APIs
+## License
+[MIT](LICENSE.txt) license.
 
-The app defines following CRUD APIs.
-
-    GET /api/notes
-    
-    POST /api/notes
-    
-    GET /api/notes/{noteId}
-    
-    PUT /api/notes/{noteId}
-    
-    DELETE /api/notes/{noteId}
-
-You can test them using postman or any other rest client.
-
-## Learn more
-
-You can find the tutorial for this application on my blog -
-
-<https://www.callicoder.com/spring-boot-rest-api-tutorial-with-mysql-jpa-hibernate/>
