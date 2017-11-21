@@ -118,7 +118,7 @@
 									<groupId>com.github.jsimone</groupId>
 									<artifactId>webapp-runner</artifactId>
 									<version>8.5.23.1</version>
-									<destFileName>ROOT.jar</destFileName>
+									<destFileName>ROOT.war</destFileName>
 								</artifactItem>
 							</artifactItems>
 						</configuration>

@@ -1,1 +1,1 @@
-web:	java $JAVA_OPTS -jar target/dependency/ROOT.jar --port $PORT target/*.war
+web: java $JAVA_OPTS -jar target/ROOT.war --port $PORT target/*.war
