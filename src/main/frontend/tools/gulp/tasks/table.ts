@@ -31,8 +31,8 @@ const assetFiles = [
   path.join(TABLE_DIR, '**/*.html'),
   path.join(TABLE_DIR, '**/*.scss'),
   path.join(TABLE_DIR, 'package.json'),
-  path.join(PROJECT_ROOT, 'README.md'),
-  path.join(PROJECT_ROOT, 'LICENSE.txt'),
+  path.join(PROJECT_ROOT, './README.md'),
+  path.join(PROJECT_ROOT, './LICENSE.txt'),
 ];
 
 /** Builds components to UMD bundle. */

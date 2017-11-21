@@ -13,10 +13,10 @@ You will be able to perform CRUD operations to update employees displayed on the
 ## Installation
 
 ### What you'll need
-- Angular 4.4.4
+- Angular 5.0.0
 - Spring Boot 1.5.4
 - MySQL
-- Java 8
+- Java 8 (1.8)
 - Maven 3.5.2
 
 ### Setting up
@@ -25,20 +25,33 @@ You will be able to perform CRUD operations to update employees displayed on the
 ```
 git clone https://github.com/hubukinokaze/employee-dashboard.git employee-dashboard
 ```
-
 - Install dependencies
 ```
 mvn clean install
 ```
+or
+```
+mvn clean package
+```
 
-- Run your local MySQL database using something like [MAMP](https://www.mamp.info/en/).
-
+- Run your local MySQL database using something like [MAMP](https://www.mamp.info/en/)
 - Run project
 ```
 mvn spring-boot:run
 ```
 
-- Access page at [http://localhost:8080](http://localhost:8080).
+- Access page at [http://localhost:8080](http://localhost:8080)
+
+### Deploy WAR with Tomcat
+- Download Tomcat
+- Package your application into WAR
+```
+mvn clean package
+```
+- Move WAR file from target folder to Tomcat's webapps folder
+- Rename it to ROOT.war for it to be accessible from the root page
+- Go to Tomcat's bin folder and open up 'startup.bat'
+- Access page at [http://localhost:8080](http://localhost:8080)
 
 ## License
 [MIT](LICENSE.txt) license.
