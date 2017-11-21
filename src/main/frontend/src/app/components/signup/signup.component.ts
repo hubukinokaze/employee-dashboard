@@ -14,12 +14,14 @@ export class SignupComponent {
   public password: string;
   public passwordConfirm: string;
   public isLoading: boolean;
+  private snackBarDuration: number;
 
   constructor(private router: Router, private userService: UserService, private snackBar: MatSnackBar){
     this.username = "";
     this.password = "";
     this.passwordConfirm = "";
     this.isLoading = false;
+    this.snackBarDuration = 3000;
   }
 
   signup() {
@@ -31,8 +33,8 @@ export class SignupComponent {
         date: new Date().toISOString()
       }
       this.userService.createUser(user).subscribe(
-        data => {this.router.navigate(['/home']); this.isLoading = false},
-        err => {this.snackBar.open('Something went wrong. Try again.', 'Dismiss',{duration: 2500}); this.isLoading = false;},
+        data => {console.log(data); this.router.navigate(['/home']); this.isLoading = false},
+        err => {this.snackBar.open('Username already exists or something went wrong', 'Dismiss',{duration: this.snackBarDuration}); this.isLoading = false;},
       );
     } else {
       this.isLoading = false;
@@ -41,11 +43,10 @@ export class SignupComponent {
   }
 
   private checkIfEmpty(): boolean {
-    console.log(this.username !== "" && this.password !== "" && this.passwordConfirm !== "");
     if (this.username !== "" && this.password !== "" && this.passwordConfirm !== "") {
       return true;
     }
-    this.snackBar.open('Incorrect username and/or password', 'Dismiss', {duration: 3000});
+    this.snackBar.open('Incorrect username and/or password', 'Dismiss', {duration: this.snackBarDuration});
     return false;
   }
 
@@ -55,7 +56,7 @@ export class SignupComponent {
     }
     this.password = "";
     this.passwordConfirm = "";
-    this.snackBar.open('Passwords do NOT match', 'Dismiss', {duration: 3000});
+    this.snackBar.open('Passwords do NOT match', 'Dismiss', {duration: this.snackBarDuration});
     return false;
   }
 
