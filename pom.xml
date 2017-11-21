@@ -116,28 +116,31 @@
 						<include>target/ROOT.war</include>
 					</includes>
 					<jdkVersion>1.8</jdkVersion>
+					<processTypes>
+						<web>java $JAVA_OPTS -jar target/ROOT.war --server.port=$PORT $JAR_OPTS</web>
+					</processTypes>
 				</configuration>
 			</plugin>
-			<!--<plugin>-->
-				<!--<groupId>org.apache.maven.plugins</groupId>-->
-				<!--<artifactId>maven-dependency-plugin</artifactId>-->
-				<!--<executions>-->
-					<!--<execution>-->
-						<!--<phase>package</phase>-->
-						<!--<goals><goal>copy</goal></goals>-->
-						<!--<configuration>-->
-							<!--<artifactItems>-->
-								<!--<artifactItem>-->
-									<!--<groupId>com.github.jsimone</groupId>-->
-									<!--<artifactId>webapp-runner</artifactId>-->
-									<!--<version>8.5.23.1</version>-->
-									<!--<destFileName>ROOT.war</destFileName>-->
-								<!--</artifactItem>-->
-							<!--</artifactItems>-->
-						<!--</configuration>-->
-					<!--</execution>-->
-				<!--</executions>-->
-			<!--</plugin>-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals><goal>copy</goal></goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>com.github.jsimone</groupId>
+									<artifactId>webapp-runner</artifactId>
+									<version>8.5.23.1</version>
+									<destFileName>ROOT.war</destFileName>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 
