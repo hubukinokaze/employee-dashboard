@@ -140,10 +140,6 @@ span.highlight {
   p {
     font-weight: 700;
   }
-
-  span.logout {
-    padding-left: 3rem;
-  }
 }
 
 .bottom-border {
@@ -223,6 +219,15 @@ mat-row:hover {
   cursor: pointer;
 }
 
+span.menu-navbar-large {
+  display: block;
+  padding-left: 2rem;
+}
+
+span.menu-navbar-small {
+  display: none;
+}
+
 @media screen and (min-width: 64em) {
   .page-header {
     padding: 5rem 6rem;
@@ -268,6 +273,18 @@ mat-row:hover {
   mat-form-field.filter-form-field, span.filter-form-field {
     width: 100%;
   }
+
+  div.page-navbar {
+    padding: 0 0.5rem;
+  }
+
+  span.menu-navbar-large {
+    display: none;
+  }
+
+  span.menu-navbar-small {
+    display: block;
+  }
 }
 
 @media screen and (max-width: 20em){
@@ -281,6 +298,19 @@ mat-row:hover {
       height: 55px;
     }
   }
+
+  div.page-navbar {
+    padding: 0 0.5rem;
+  }
+
+  span.menu-navbar-large {
+    display: none;
+  }
+
+  span.menu-navbar-small {
+    display: block;
+  }
+
 }
 
 .project-name {

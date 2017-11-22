@@ -2,8 +2,27 @@
   <div class="page-navbar">
     <span><h2 class="project-name-2"><a routerLink="/home">Employee Dashboard</a></h2></span>
     <span class="spacer"></span>
-    <span><p><a target="_blank" href="https://github.com/hubukinokaze/employee-dashboard">GitHub</a></p></span>
-    <span class="logout"><p><a routerLink="/">Logout</a></p></span>
+    <span class="menu-navbar-small">
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item href="https://github.com/hubukinokaze/employee-dashboard">
+          <mat-icon class="mdi mdi-github-circle"></mat-icon>
+          <span>GitHub</span>
+        </button>
+        <button mat-menu-item routerLink="/">
+          <mat-icon>hotel</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+    </span>
+    <span class="menu-navbar-large">
+      <p><a href="https://github.com/hubukinokaze/employee-dashboard">Github</a></p>
+    </span>
+    <span class="menu-navbar-large">
+      <p><a routerLink="/">Logout</a></p>
+    </span>
   </div>
 
   <div class="bottom-border"></div>

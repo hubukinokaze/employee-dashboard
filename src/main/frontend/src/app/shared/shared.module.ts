@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import {
   MatSelectModule, MatInputModule, MatFormFieldModule, MatButtonModule, MatIconModule,
   MatTableModule, MatProgressBarModule, MatPaginatorModule, MatSortModule, MatDialogModule, MatListModule,
-  MatSnackBarModule, MatTooltipModule, MatCardModule
+  MatSnackBarModule, MatTooltipModule, MatCardModule, MatMenuModule
 } from '@angular/material';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -30,6 +30,7 @@ const SHARED_MODULES = [
   MatSnackBarModule,
   MatTooltipModule,
   MatCardModule,
+  MatMenuModule,
 ];
 
 const SHARED_COMPONENTS = [
@@ -50,6 +51,7 @@ const SHARED_DIRECTIVES = [
   imports: [
     RouterModule,
     CommonModule,
+    ...SHARED_MODULES,
   ],
   declarations: [
     ...SHARED_COMPONENTS,
