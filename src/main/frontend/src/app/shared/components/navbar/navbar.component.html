@@ -7,7 +7,7 @@
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item href="https://github.com/hubukinokaze/employee-dashboard">
+        <button mat-menu-item (click)="goToUrl()">
           <mat-icon class="mdi mdi-github-circle"></mat-icon>
           <span>GitHub</span>
         </button>

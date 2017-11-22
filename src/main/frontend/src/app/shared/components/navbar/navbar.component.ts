@@ -5,4 +5,8 @@ import { Component } from '@angular/core';
   templateUrl: './navbar.component.html',
 })
 export class NavbarComponent {
+
+  public goToUrl() {
+    window.location.href = 'https://github.com/hubukinokaze/employee-dashboard';
+  }
 }
