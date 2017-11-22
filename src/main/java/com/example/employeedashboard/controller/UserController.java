@@ -49,7 +49,6 @@ public class UserController {
     @PostMapping("/user")
     public ResponseEntity<User> createUser(@Valid @RequestBody User user) {
         User userExist = userRepository.findByUsername(user.getUsername());
-        System.out.print(userExist);
 
         // Check if user exists
         if(userExist == null) {

@@ -115,7 +115,7 @@ export class HomeComponent {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if (result != '') {
+      if (result != '' && result != undefined) {
         this.employeeList.splice(0, 0, result);
         this.createEmployee(result);
         this.setData(this.employeeList);
@@ -131,7 +131,7 @@ export class HomeComponent {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if (result != '') {
+      if (result != '' && result != undefined) {
         let employeePos = this.employeeList.map(function(x) {return x.id; }).indexOf(rowData.id);
 
         this.employeeList.splice(employeePos, 1);
